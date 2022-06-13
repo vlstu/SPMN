@@ -1167,15 +1167,15 @@ EmpWis As screen:
     Button4 As button:
         OnSelect: =NewForm(Form8)
         Text: ="Кнопка"
-        X: =494
-        Y: =69
+        X: =756
+        Y: =17
         ZIndex: =2
 
     Button10 As button:
         OnSelect: =SubmitForm(Form8)
         Text: ="Кнопка"
-        X: =494
-        Y: =183
+        X: =760
+        Y: =69
         ZIndex: =3
 
     TextInput2 As text:
@@ -1193,24 +1193,28 @@ EmpWis As screen:
         ZIndex: =5
 
     Monday As dropdown:
+        Default: =Gallery1.Selected.monday
         Items: =["","Вых"]
         X: =40
         Y: =360
         ZIndex: =6
 
     Tuesday As dropdown:
+        Default: =Gallery1.Selected.tuesday
         Items: =["","Вых"]
         X: =40
         Y: =417
         ZIndex: =7
 
     Wednesday As dropdown:
+        Default: =Gallery1.Selected.wednesday
         Items: =["","Вых"]
         X: =40
         Y: =477
         ZIndex: =8
 
     Thursday As dropdown:
+        Default: =""
         Items: =["","Вых"]
         X: =40
         Y: =540
@@ -1253,8 +1257,8 @@ EmpWis As screen:
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =Min(160, Self.Height - 60)
-        Width: =521
-        X: =844
+        Width: =417
+        X: =948
         Y: =404
         ZIndex: =15
 
