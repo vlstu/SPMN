@@ -1,0 +1,79 @@
+{
+  "7600b737-3933-424a-b53b-1ea3fcbee4e6": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1578/1.0.1578.2813/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://iweof.sharepoint.com/teams/o365g_rucscspmn_retruc01": {
+        "dataSources": {
+          "Employees_wishes": {
+            "tableName": "3519099e-12c1-4b58-9cab-76ac6b4c3cef"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Employees_wishes"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7600b737-3933-424a-b53b-1ea3fcbee4e6"
+  },
+  "f38b89ef-9fe3-4e17-9a5d-4976412e6616": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Пользователи Office\u00A0365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "ПользователиOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f38b89ef-9fe3-4e17-9a5d-4976412e6616"
+  },
+  "fbfb3bd5-a731-4df7-887b-3d075032cb7e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (для бизнеса)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1579/1.0.1579.2824/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "groups%252F43a1b0eb-db07-4536-9d7b-aaacfe455c19,b%2521ObFq3YXD2Ue9Xbjr4V5JQB-UIS6MVolOirLH2LIHT9yLa5YSIoCnQpSdVAogvjPt,01PNDUELND3GDK6URRRREKSB343CYK4ULP": {
+        "dataSources": {
+          "Activities": {
+            "tableName": "{1C8704A3-93BC-4409-A7D0-8ED405428979}"
+          },
+          "OPS": {
+            "tableName": "{AF076313-8B51-437D-9A92-61EE55052EA5}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Activities",
+      "OPS"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fbfb3bd5-a731-4df7-887b-3d075032cb7e"
+  }
+}

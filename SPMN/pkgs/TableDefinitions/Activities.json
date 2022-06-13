@@ -1,0 +1,7 @@
+{
+  "DataEntityMetadataJson": {
+    "{1C8704A3-93BC-4409-A7D0-8ED405428979}": "{\"name\":\"{1C8704A3-93BC-4409-A7D0-8ED405428979}\",\"title\":\"Activities\",\"x-ms-permission\":\"read-write\",\"x-ms-capabilities\":{\"sortRestrictions\":{\"sortable\":true},\"filterRestrictions\":{\"filterable\":true},\"filterFunctionSupport\":[\"eq\",\"ne\",\"substringof\",\"contains\",\"startswith\",\"endswith\"]},\"schema\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"Activities\":{\"type\":\"string\",\"title\":\"Activities\",\"x-ms-sort\":\"none\",\"x-ms-capabilities\":{\"filterFunctions\":[\"eq\",\"ne\",\"substringof\",\"contains\",\"startswith\",\"endswith\"]},\"x-ms-permission\":\"read-write\"}}}}}"
+  },
+  "EntityName": "Activities",
+  "TableName": "{1C8704A3-93BC-4409-A7D0-8ED405428979}"
+}

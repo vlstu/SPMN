@@ -1,0 +1,1266 @@
+Screen1 As screen:
+
+    Label10 As label:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =4
+        Font: =Font.'Open Sans Condensed'
+        Height: =768
+        Text: =""
+        Width: =772
+        X: =10
+        ZIndex: =1
+
+    Dropcov_1 As dropdown:
+        AllowEmptySelection: =true
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        ChevronBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverFill: =RGBA(0, 0, 0, 1)
+        Default: =""
+        FontWeight: =FontWeight.Semibold
+        Height: =54
+        HoverBorderColor: =RGBA(0, 134, 208, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        Items: =["",1,2,3,4,5,6,7]
+        OnChange: =If(Dropcov_1.SelectedText.Value = "",Set(vis,0) & Set(vis1,0) & Set(vis2,0) & Set(vis3,0) & Set(vis4,0) & Set(vis5,0) & Set(vis1_1,0),0)
+        OnSelect: =If(Dropcov_1.SelectedText.Value = "",Set(vis,0) & Set(vis1,0) & Set(vis2,0) & Set(vis3,0) & Set(vis4,0) & Set(vis5,0) & Set(vis1_1,0),0)
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(255, 255, 255, 1)
+        Size: =15
+        Width: =320
+        X: =232
+        Y: =102
+        ZIndex: =5
+
+    Label3_1 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =66
+        Size: =20
+        Text: ="Количество покрытий"
+        Underline: =true
+        Width: =342
+        X: =221
+        Y: =23
+        ZIndex: =6
+
+    Label8 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =3
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Semibold
+        Height: =54
+        Size: =12
+        Text: ="Покрытие время Мск"
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+        Width: =169
+        X: =20
+        Y: =236
+        ZIndex: =7
+
+    Label9 As label:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        FontWeight: =FontWeight.Semibold
+        Height: =50
+        Text: ="Компетенция (навыки, группирования из которых планируем)"
+        Visible: =If(vis4 = 1 ,true,false)
+        Width: =565
+        X: =794
+        Y: =510
+        ZIndex: =12
+
+    TextInput6 As text:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        Default: =""
+        DisabledColor: =RGBA(141, 198, 63, 1)
+        EnableSpellCheck: =true
+        Height: =163
+        HintText: ="Текст"
+        HoverBorderColor: =RGBA(0, 134, 208, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        LineHeight: =1.4
+        Mode: =TextMode.MultiLine
+        PressedBorderColor: =RGBA(0, 134, 208, 1)
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(204, 231, 246, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        Size: =14
+        Visible: =If(vis4 = 1 ,true,false)
+        Width: =378
+        X: =809
+        Y: =588
+        ZIndex: =13
+
+    Label12 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: ="Админ. распределение; min"
+        Visible: |
+            =If(vis = 1,true,false)
+        Width: =565
+        X: =794
+        Y: =23
+        ZIndex: =14
+
+    Dropdown1 As dropdown:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        ChevronBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverFill: =RGBA(0, 0, 0, 1)
+        Default: =""
+        Height: =39
+        HoverFill: =RGBA(204, 231, 246, 1)
+        Items: =["","10мин","15мин","20мин","25мин","30мин"]
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(255, 255, 255, 1)
+        Size: =15
+        Visible: =If(vis = 1,true,false)
+        Width: =167
+        X: =805
+        Y: =163
+        ZIndex: =15
+
+    Dropdown2 As dropdown:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        ChevronBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverFill: =RGBA(0, 0, 0, 1)
+        Default: ="Нет"
+        Height: =39
+        HoverFill: =RGBA(204, 231, 246, 1)
+        Items: =["","Нет","В начале","В конце"]
+        PressedBorderColor: =RGBA(0, 134, 208, 1)
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(255, 255, 255, 1)
+        Size: =15
+        Visible: =If(vis = 1,true,false)
+        Width: =167
+        X: =805
+        Y: =105
+        ZIndex: =16
+
+    Dropdown1_1 As dropdown:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        ChevronBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverFill: =RGBA(0, 0, 0, 1)
+        Default: =""
+        Height: =39
+        HoverFill: =RGBA(204, 231, 246, 1)
+        Items: =["","10мин","15мин","20мин","25мин","30мин"]
+        Reset: =If(Button15.Pressed,true,false)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(255, 255, 255, 1)
+        Visible: =If(vis1 = 1,true,false)
+        Width: =167
+        X: =1079
+        Y: =163
+        ZIndex: =17
+
+    Dropdown2_1 As dropdown:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        ChevronBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+        ChevronHoverFill: =RGBA(0, 0, 0, 1)
+        Default: =""
+        Height: =39
+        HoverFill: =RGBA(204, 231, 246, 1)
+        Items: =["","Нет","В начале","В конце"]
+        PressedBorderColor: =
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(255, 255, 255, 1)
+        Visible: =If(vis1 = 1,true,false)
+        Width: =167
+        X: =1079
+        Y: =105
+        ZIndex: =18
+
+    Icon1 As icon.Add:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =26
+        Icon: =Icon.Add
+        OnSelect: =Set(vis1,1) & Set(vis1_1, 0)
+        Visible: =If(vis1_1 = 1,true,false) 
+        Width: =35
+        X: =1024
+        Y: =129
+        ZIndex: =19
+
+    Label5 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =24
+        Size: =10
+        Text: ="Добавить"
+        Visible: =If(vis1_1 = 1,true,false) 
+        Width: =120
+        X: =981
+        Y: =162
+        ZIndex: =20
+
+    formula As label:
+        Text: =If(Dropdown2.SelectedText.Value = "Нет","Нет", If(Dropdown2_1.SelectedText.Value = "Нет", Concatenate(Dropdown2.Selected.Value & " " & Dropdown1.Selected.Value ),Concatenate(Dropdown2.Selected.Value & " " & Dropdown1.Selected.Value & " "& Dropdown2_1.Selected.Value & " " & Dropdown1_1.Selected.Value)))
+        Visible: =
+        X: =301
+        ZIndex: =21
+
+    Label11_2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Text: ="Минимальная продолжительность в активности\день (мин)"
+        Visible: =If(vis2 = 1 ,true,false)
+        Width: =565
+        X: =794
+        Y: =297
+        ZIndex: =26
+
+    TextInput5_1 As text:
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderThickness: =3
+        Default: =""
+        Format: =TextFormat.Number
+        Height: =39
+        HintText: ="Число"
+        HoverBorderColor: =RGBA(0, 134, 208, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        PressedBorderColor: =RGBA(0, 134, 208, 1)
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(204, 231, 246, 1)
+        Reset: =If(Button15.Pressed,true,false)
+        Visible: =If(vis2 = 1 ,true,false)
+        Width: =346
+        X: =805
+        Y: =377
+        ZIndex: =27
+
+    Icon2 As icon.ArrowDown:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =44
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+        Width: =62
+        X: =361
+        Y: =170
+        ZIndex: =28
+
+    Icon6 As icon.Lock:
+        Color: =RGBA(0, 0, 0, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =256
+        Icon: =Icon.Lock
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,false,true)
+        Width: =144
+        X: =304
+        Y: =312
+        ZIndex: =29
+
+    Icon8 As icon.ArrowDown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Visible: =If(vis2 = 1 ,true,false)
+        Width: =60
+        X: =998
+        Y: =227
+        ZIndex: =32
+
+    Button9 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(vis2,1)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Size: =10
+        Text: ="Заполнить"
+        Visible: |+
+            =If(vis = 1 ,true,false) && If(Dropdown2.SelectedText.Value = "",false,true)
+            
+            
+        Width: =121
+        X: =1224
+        Y: =236
+        ZIndex: =36
+
+    Button9_2 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisplayMode: =If(Value(TextInput5_1.Text)*1 <> ""*1,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(0, 134, 208, 1)
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(vis4,1)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Size: =10
+        Text: ="Заполнить"
+        Visible: |-
+            =If(vis2 = 1 ,true,false)
+            &&
+            If(Button9_2.Text <> "",true,false)
+        Width: =121
+        X: =1224
+        Y: =451
+        ZIndex: =38
+
+    Button9_4 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisabledFill: =RGBA(203, 102, 102, 1)
+        DisplayMode: =If(Отладка1.Text = "false",DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(141, 198, 63, 1)
+        Height: =47
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: |-
+            = Navigate(Screen4)  & Set(dem1q, Dropcov_1.SelectedText.Value*1)& 
+             NewForm(Form1)& 
+            NewForm(Form2)&
+            NewForm(Form3)& 
+            NewForm(Form4)& 
+            NewForm(Form5)& 
+            NewForm(Form6)& 
+            NewForm(Form7)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(0, 134, 208, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Size: =10
+        Text: ="Предварительный просмотр"
+        Visible: |
+            =
+            If(vis4 = 1 ,true,false)
+        Width: =147
+        X: =1206
+        Y: =705
+        ZIndex: =40
+
+    Image1 As image:
+        Height: =444
+        Image: ='MicrosoftTeams-image (17)'
+        Visible: =If(vis = 1,false,true)
+        Width: =535
+        X: =809
+        Y: =164
+        ZIndex: =41
+
+    Image2 As image:
+        Height: =159
+        Image: ='MicrosoftTeams-image (17)'
+        Visible: =If(vis = 1,true,false)
+        Width: =189
+        ZIndex: =42
+
+    Icon3 As icon.Cancel:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =26
+        Icon: =Icon.Cancel
+        OnSelect: =Set(vis1,0) & Set(vis1_1,1)
+        Visible: =If(vis1 = 1,true,false)
+        Width: =35
+        X: =1275
+        Y: =139
+        ZIndex: =43
+
+    Label8_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =3
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Semibold
+        Height: =54
+        Size: =12
+        Text: ="Перекрытие Обедов"
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+        Width: =169
+        X: =403
+        Y: =237
+        ZIndex: =60
+
+    Label8_2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =3
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Semibold
+        Height: =54
+        Size: =12
+        Text: ="Соблюдение покрытия"
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+        Width: =169
+        X: =211
+        Y: =237
+        ZIndex: =61
+
+    Label6 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =2
+        FontWeight: =FontWeight.Semibold
+        Height: =59
+        Text: ="Заполни недостающие символы"
+        Visible: |-
+            =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+            &&
+            If(Button3.Visible = true ,false,true)
+            &&
+            If(Button3_1.Visible = true ,false,true)
+            &&
+            If(Button3_2.Visible = true ,false,true)
+            &&
+            If(Button3_3.Visible = true ,false,true)
+            &&
+            If(Button3_4.Visible = true ,false,true)
+            &&
+            If(Button3_5.Visible = true ,false,true)
+            &&
+            If(Button3_6.Visible = true ,false,true)
+        Width: =352
+        X: =216
+        Y: =692
+        ZIndex: =62
+
+    Label8_3 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 134, 208, 1)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =3
+        Font: =Font.'Open Sans Condensed'
+        FontWeight: =FontWeight.Semibold
+        Height: =54
+        Size: =12
+        Text: ="Кол-во сотрудников"
+        Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+        Width: =169
+        X: =600
+        Y: =238
+        ZIndex: =71
+
+    GroupPokr1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =72
+
+        Pokr1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+            Width: =128
+            X: =229
+            Y: =340
+            ZIndex: =46
+
+        Pokr2 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 2,true,false)
+            Width: =128
+            X: =229
+            Y: =391
+            ZIndex: =48
+
+        Pokr3 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 3,true,false)
+            Width: =128
+            X: =229
+            Y: =444
+            ZIndex: =50
+
+        Pokr4 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 4,true,false)
+            Width: =128
+            X: =229
+            Y: =497
+            ZIndex: =52
+
+        Pokr5 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 5,true,false)
+            Width: =128
+            X: =229
+            Y: =552
+            ZIndex: =54
+
+        Pokr6 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 6,true,false)
+            Width: =128
+            X: =229
+            Y: =602
+            ZIndex: =56
+
+        Pokr7 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 7,true,false)
+            Width: =128
+            X: =229
+            Y: =652
+            ZIndex: =58
+
+    GroupPokr2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =72
+
+        Pokr1_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+            Width: =128
+            X: =418
+            Y: =340
+            ZIndex: =47
+
+        Pokr2_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 2,true,false)
+            Width: =128
+            X: =418
+            Y: =391
+            ZIndex: =49
+
+        Pokr3_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 3,true,false)
+            Width: =128
+            X: =418
+            Y: =444
+            ZIndex: =51
+
+        Pokr4_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 4,true,false)
+            Width: =128
+            X: =418
+            Y: =497
+            ZIndex: =53
+
+        Pokr5_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 5,true,false)
+            Width: =128
+            X: =418
+            Y: =552
+            ZIndex: =55
+
+        Pokr6_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 6,true,false)
+            Width: =128
+            X: =418
+            Y: =602
+            ZIndex: =57
+
+        Pokr7_1 As dropdown:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            ChevronBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverBackground: =RGBA(0, 134, 208, 1)
+            ChevronHoverFill: =RGBA(0, 0, 0, 1)
+            Default: ="Нет"
+            Height: =25
+            HoverFill: =RGBA(204, 231, 246, 1)
+            Items: =["Да","Нет"]
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =If(Button15.Pressed,true,false)
+            SelectionColor: =RGBA(0, 0, 0, 1)
+            SelectionFill: =RGBA(255, 255, 255, 1)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 7,true,false)
+            Width: =128
+            X: =418
+            Y: =652
+            ZIndex: =59
+
+    Icon8_1 As icon.ArrowDown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =52
+        Visible: =If(vis2 = 1 ,true,false)
+        Width: =60
+        X: =999
+        Y: =444
+        ZIndex: =79
+
+    GroupPokr3 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =79
+
+        TextInput1_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+            Width: =128
+            X: =621
+            Y: =341
+            ZIndex: =72
+
+        TextInput1_3 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 3,true,false)
+            Width: =128
+            X: =621
+            Y: =444
+            ZIndex: =73
+
+        TextInput1_4 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 4,true,false)
+            Width: =128
+            X: =621
+            Y: =497
+            ZIndex: =74
+
+        TextInput1_5 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 5,true,false)
+            Width: =128
+            X: =621
+            Y: =552
+            ZIndex: =75
+
+        TextInput1_6 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 6,true,false)
+            Width: =128
+            X: =621
+            Y: =602
+            ZIndex: =76
+
+        TextInput1_7 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 7,true,false)
+            Width: =128
+            X: =621
+            Y: =652
+            ZIndex: =77
+
+        TextInput1_2 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Format: =TextFormat.Number
+            Height: =25
+            HintText: ="число"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: |-
+                =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+                &&
+                If(Dropcov_1.SelectedText.Value*1 >= 2,true,false)
+            Width: =128
+            X: =621
+            Y: =391
+            ZIndex: =78
+
+    GroupPokr4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =79
+
+        Input1_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+            Width: =128
+            X: =40
+            Y: =340
+            ZIndex: =2
+
+        Input13_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 3,true,false)
+            Width: =128
+            X: =40
+            Y: =444
+            ZIndex: =4
+
+        Input4_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 4,true,false)
+            Width: =128
+            X: =40
+            Y: =497
+            ZIndex: =8
+
+        Input5_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 5,true,false)
+            Width: =128
+            X: =40
+            Y: =552
+            ZIndex: =9
+
+        Input6_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 6,true,false)
+            Width: =128
+            X: =40
+            Y: =602
+            ZIndex: =10
+
+        Input7_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: =If(Dropcov_1.SelectedText.Value*1 >= 7,true,false)
+            Width: =128
+            X: =40
+            Y: =652
+            ZIndex: =11
+
+        Input2_1 As text:
+            BorderColor: =RGBA(0, 134, 208, 1)
+            BorderThickness: =3
+            Default: =""
+            Height: =25
+            HintText: |-
+                ="00:00 - 00:00"
+            HoverBorderColor: =RGBA(0, 134, 208, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Reset: =If(Button15.Pressed,true,false)
+            Visible: |-
+                =If(Dropcov_1.SelectedText.Value*1 >= 1,true,false)
+                &&
+                If(Dropcov_1.SelectedText.Value*1 >= 2,true,false)
+            Width: =128
+            X: =40
+            Y: =391
+            ZIndex: =69
+
+    GroupButton1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =79
+
+        Button3 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |-
+                =If(Dropcov_1.SelectedText.Value*1 = 1,true,false)
+                &&
+                If(Input1_1.Text <> "",true,false)
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =30
+
+        Button3_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |
+                =If(Dropcov_1.SelectedText.Value*1 = 7,true,false)
+                &&
+                If(Input7_1.Text  <> "",true,false) 
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =63
+
+        Button3_2 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |
+                =If(Dropcov_1.SelectedText.Value*1 = 6,true,false)
+                &&
+                If(Input6_1.Text <> "",true,false) 
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =64
+
+        Button3_3 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |
+                =If(Dropcov_1.SelectedText.Value*1 = 5,true,false)
+                &&
+                If(Input5_1.Text <> "",true,false)
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =65
+
+        Button3_4 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |
+                =If(Dropcov_1.SelectedText.Value*1 = 4,true,false)
+                &&
+                If(Input4_1.Text <> "",true,false)
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =66
+
+        Button3_5 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |
+                =If(Dropcov_1.SelectedText.Value*1 = 3,true,false)
+                &&
+                If(Input13_1.Text <> "",true,false)
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =67
+
+        Button3_6 As button:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 134, 208, 1)
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(204, 231, 246, 1)
+            OnSelect: =Set(vis,1) & Set(vis1_1,1)
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 134, 208, 1)
+            Size: =10
+            Text: ="Далее"
+            Visible: |+
+                =If(Dropcov_1.SelectedText.Value*1 = 2,true,false)
+                &&
+                If(Input2_1.Text <> "",true,false)
+                
+                
+            Width: =121
+            X: =624
+            Y: =714
+            ZIndex: =68
+
+    Label22 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =85
+        Size: =16
+        Text: |-
+            ="prod.vlstu
+            mod.alleo10"
+        Visible: =If(vis = 1,false,true)
+        Width: =260
+        X: =949
+        Y: =503
+        ZIndex: =80
+
+    Отладка As timer:
+        AutoStart: =If(Button3.Visible = false,true,false)
+        Duration: =1
+        OnTimerEnd: =Set(vis,0) & Set(vis1,0) & Set(vis2,0) & Set(vis3,0) & Set(vis4,0) & Set(vis5,0) & Set(vis1_1,0)
+        Visible: =false
+        X: =1204
+        Y: =728
+        ZIndex: =81
+
+    Отладка1 As label:
+        Text: =IsBlank(TextInput6)
+        Visible: =false
+        X: =1206
+        Y: =614
+        ZIndex: =82
+

@@ -1,0 +1,50 @@
+"Screen6 As screen.'tabletLayout_Success_ver3.0'":
+
+    iconCircle1 As circle.Circle:
+        Fill: =RGBA(141, 198, 63, 1)
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =(Parent.Height/2 - Self.Height/2) * .7
+        ZIndex: =1
+
+    iconCheck1 As icon.Check:
+        Color: =RGBA(0, 0, 0, 1)
+        FocusedBorderThickness: =50
+        Height: =iconCircle1.Height
+        Icon: =Icon.Check
+        PaddingBottom: =Self.PaddingTop
+        PaddingLeft: =Self.PaddingTop
+        PaddingRight: =Self.PaddingTop
+        PaddingTop: =24
+        Width: =iconCircle1.Width
+        X: =632
+        Y: =233
+        ZIndex: =2
+
+    LblSuccessMsg1 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Height: =iconCircle1.Height
+        Size: =20
+        Text: ="Процедура выполнена"
+        Width: =Parent.Width * 0.75
+        X: =171
+        Y: =434
+        ZIndex: =3
+
+    Button15 As button:
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =93
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(0, 134, 208, 1)
+        OnSelect: =Navigate(Screen2) & Set(vis,0) & Set(vis1,0) & Set(vis2,0) & Set(vis3,0) & Set(vis4,0) & Set(vis5,0) & Set(vis1_1,0)
+        RadiusBottomLeft: =25
+        RadiusBottomRight: =25
+        RadiusTopLeft: =25
+        RadiusTopRight: =25
+        Size: =18
+        Text: ="Вернуться на экран заполнения"
+        Width: =252
+        X: =557
+        Y: =552
+        ZIndex: =4
+

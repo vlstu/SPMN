@@ -1,0 +1,34 @@
+First As screen:
+
+    Button1 As button:
+        Height: =55
+        Text: ="Кнопка"
+        Width: =362
+        X: =39
+        Y: =201
+        ZIndex: =1
+
+    Label1 As label:
+        Height: =52
+        Text: ="Взаимодействие Staff-Planing - RealTime"
+        Width: =412
+        X: =456
+        Y: =39
+        ZIndex: =2
+
+    Button1_1 As button:
+        Height: =55
+        Text: ="Кнопка"
+        Width: =362
+        X: =39
+        Y: =306
+        ZIndex: =3
+
+    Button1_2 As button:
+        Height: =55
+        Text: ="Кнопка"
+        Width: =362
+        X: =39
+        Y: =431
+        ZIndex: =4
+
