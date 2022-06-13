@@ -4332,7 +4332,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Ops_День_ч_Столбец6",
-      "ParentIndex": 5,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4443,7 +4443,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Ops_Месяц_ч_Столбец6",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7408,7 +7408,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Количество_сотрудников_мин_чел_Столбец6",
-      "ParentIndex": 3,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7633,7 +7633,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Минимальная_продолжительность_ч_Столбец6",
-      "ParentIndex": 4,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8015,7 +8015,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Перекрытие_Обедов_Столбец1",
-      "ParentIndex": 7,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8121,7 +8121,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Покрытие_number_Столбец1",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8227,7 +8227,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Покрытие_время_Столбец6",
-      "ParentIndex": 6,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8333,7 +8333,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Соблюдение_покрытия_Столбец6",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

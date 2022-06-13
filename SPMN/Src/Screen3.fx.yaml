@@ -1,0 +1,22 @@
+Screen3 As screen:
+
+    TextInput3 As text:
+        Default: =1
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Dropdown3 As dropdown:
+        Items: =DropDownSample
+        X: =32
+        Y: =138
+        ZIndex: =2
+
+    Timer9 As timer:
+        Duration: =1000
+        OnTimerStart: =Dropdown3.DisplayMode.Disabled
+        Start: =If(TextInput3.Text*1  = 1,true,false)
+        X: =540
+        Y: =40
+        ZIndex: =3
+

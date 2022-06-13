@@ -4,6 +4,7 @@ EmpWis As screen:
         DataSource: =Employees_wishes
         Height: =364
         NumberOfColumns: =1
+        Visible: =false
         Width: =417
         X: =948
         ZIndex: =1
@@ -308,7 +309,7 @@ EmpWis As screen:
 
             DataCardValue5 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Dropdown3.SelectedText.Value
+                Default: =Graf.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -1167,15 +1168,15 @@ EmpWis As screen:
     Button4 As button:
         OnSelect: =NewForm(Form8)
         Text: ="Кнопка"
-        X: =756
-        Y: =17
+        X: =1201
+        Y: =676
         ZIndex: =2
 
     Button10 As button:
         OnSelect: =SubmitForm(Form8)
         Text: ="Кнопка"
-        X: =760
-        Y: =69
+        X: =1205
+        Y: =728
         ZIndex: =3
 
     TextInput2 As text:
@@ -1185,60 +1186,15 @@ EmpWis As screen:
         Y: =457
         ZIndex: =4
 
-    Dropdown3 As dropdown:
+    Graf As dropdown:
         Default: =Gallery1.Selected.Exceptions
         Items: =["2\2","2\2 3\2","5\2","4\3"]
         X: =40
         Y: =17
         ZIndex: =5
 
-    Monday As dropdown:
-        Default: =Gallery1.Selected.monday
-        Items: =["","Вых"]
-        X: =40
-        Y: =360
-        ZIndex: =6
-
-    Tuesday As dropdown:
-        Default: =Gallery1.Selected.tuesday
-        Items: =["","Вых"]
-        X: =40
-        Y: =417
-        ZIndex: =7
-
-    Wednesday As dropdown:
-        Default: =Gallery1.Selected.wednesday
-        Items: =["","Вых"]
-        X: =40
-        Y: =477
-        ZIndex: =8
-
-    Thursday As dropdown:
-        Default: =""
-        Items: =["","Вых"]
-        X: =40
-        Y: =540
-        ZIndex: =9
-
-    Friday As dropdown:
-        Items: =["","Вых"]
-        X: =40
-        Y: =596
-        ZIndex: =10
-
-    Saturday As dropdown:
-        Items: =["","Вых"]
-        X: =40
-        Y: =652
-        ZIndex: =11
-
-    Sunday As dropdown:
-        Items: =["","Вых"]
-        X: =40
-        Y: =711
-        ZIndex: =12
-
     Dropdown3_8 As dropdown:
+        Default: =Gallery1.Selected.Preferences
         Items: |-
             =["У (до 18:00)","Д (до 20:00)","В (до 22:00)","Н (до 23:00)","Н (до 00:30)","Н (до 01:00)","Длинная смена"]
         X: =40
@@ -1246,6 +1202,7 @@ EmpWis As screen:
         ZIndex: =13
 
     Week As dropdown:
+        DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
         Items: =["Нет","Да"]
         X: =432
         Y: =364
@@ -1257,8 +1214,9 @@ EmpWis As screen:
         Layout: =Layout.Vertical
         TemplatePadding: =0
         TemplateSize: =Min(160, Self.Height - 60)
-        Width: =417
-        X: =948
+        Visible: =false
+        Width: =449
+        X: =916
         Y: =404
         ZIndex: =15
 
@@ -1320,4 +1278,89 @@ EmpWis As screen:
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - 1
             ZIndex: =5
+
+    Label21 As label:
+        Text: =Saturday.SelectedText.Value
+        X: =102
+        Y: =210
+        ZIndex: =16
+
+    GroupWeek As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =16
+
+        Monday As dropdown:
+            Default: =Gallery1.Selected.monday
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =360
+            ZIndex: =6
+
+        Tuesday As dropdown:
+            Default: =Gallery1.Selected.tuesday
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =417
+            ZIndex: =7
+
+        Wednesday As dropdown:
+            Default: =Gallery1.Selected.wednesday
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =477
+            ZIndex: =8
+
+        Thursday As dropdown:
+            Default: =Gallery1.Selected.thursday
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =540
+            ZIndex: =9
+
+        Friday As dropdown:
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =596
+            ZIndex: =10
+
+        Saturday As dropdown:
+            DisplayMode: |+
+                =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+                & If(T = 1 ,DisplayMode.Edit,DisplayMode.Disabled)
+                
+            Items: =["","Вых"]
+            X: =40
+            Y: =652
+            ZIndex: =11
+
+        Sunday As dropdown:
+            DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
+            Items: =["","Вых"]
+            X: =40
+            Y: =711
+            ZIndex: =12
+
+    Timer8 As timer:
+        Duration: =1000
+        OnTimerEnd: =
+        OnTimerStart: =Sunday.DisplayMode.Disabled
+        Start: =If(Saturday.SelectedText.Value <> "Вых", true,false)
+        X: =447
+        Y: =210
+        ZIndex: =17
+
+    Button16 As button:
+        OnSelect: =Set(T,1)
+        Text: ="Кнопка"
+        X: =681
+        Y: =210
+        ZIndex: =18
 
