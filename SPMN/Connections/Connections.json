@@ -13,12 +13,16 @@
         "dataSources": {
           "Employees_wishes": {
             "tableName": "3519099e-12c1-4b58-9cab-76ac6b4c3cef"
+          },
+          "Employees_wishes_Spec": {
+            "tableName": "a09bf31a-37fe-42aa-8b03-f43ae32a1180"
           }
         }
       }
     },
     "dataSources": [
-      "Employees_wishes"
+      "Employees_wishes",
+      "Employees_wishes_Spec"
     ],
     "dependencies": {},
     "dependents": [],
