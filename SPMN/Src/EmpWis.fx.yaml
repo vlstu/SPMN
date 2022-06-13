@@ -1364,3 +1364,9 @@ EmpWis As screen:
         Y: =210
         ZIndex: =18
 
+    Button17 As button:
+        Text: ="Кнопка"
+        X: =660
+        Y: =139
+        ZIndex: =19
+
