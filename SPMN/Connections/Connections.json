@@ -1,5 +1,5 @@
 {
-  "d3227feb-c5f8-42b5-9dbe-11a3634bbfe4": {
+  "8f7f855a-fe4f-4324-9b75-e8ab6e19cfc9": {
     "connectionParameters": {
       "sku": "Enterprise"
     },
@@ -22,7 +22,7 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "d3227feb-c5f8-42b5-9dbe-11a3634bbfe4"
+    "id": "8f7f855a-fe4f-4324-9b75-e8ab6e19cfc9"
   },
   "f38b89ef-9fe3-4e17-9a5d-4976412e6616": {
     "connectionParameters": {
