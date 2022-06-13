@@ -2,10 +2,10 @@ EmpWis As screen:
 
     Form8 As form:
         DataSource: =Employees_wishes
-        Height: =718
-        Width: =930
-        X: =40
-        Y: =40
+        Height: =364
+        NumberOfColumns: =1
+        Width: =417
+        X: =948
         ZIndex: =1
 
         date_DataCard1 As typedDataCard.textualEditCard:
@@ -19,7 +19,7 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "Title")
             Required: =true
             Update: =DataCardValue1.Text
-            Width: =310
+            Width: =417
             X: =0
             Y: =0
             ZIndex: =2
@@ -87,9 +87,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "TL")
             Required: =false
             Update: =DataCardValue2.Text
-            Width: =310
-            X: =1
-            Y: =0
+            Width: =417
+            X: =0
+            Y: =1
             ZIndex: =2
 
             DataCardKey2 As label:
@@ -104,7 +104,7 @@ EmpWis As screen:
 
             DataCardValue2 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =ПользователиOffice365.ManagerV2(User().Email).displayName
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -155,9 +155,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "Employee")
             Required: =false
             Update: =DataCardValue3.Text
-            Width: =310
-            X: =2
-            Y: =0
+            Width: =417
+            X: =0
+            Y: =2
             ZIndex: =2
 
             DataCardKey3 As label:
@@ -172,7 +172,7 @@ EmpWis As screen:
 
             DataCardValue3 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =User().FullName
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -223,9 +223,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "IPR")
             Required: =false
             Update: =DataCardValue4.Text
-            Width: =310
+            Width: =417
             X: =0
-            Y: =1
+            Y: =3
             ZIndex: =2
 
             DataCardKey4 As label:
@@ -291,9 +291,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "Exceptions")
             Required: =false
             Update: =DataCardValue5.Text
-            Width: =310
-            X: =1
-            Y: =1
+            Width: =417
+            X: =0
+            Y: =4
             ZIndex: =2
 
             DataCardKey5 As label:
@@ -308,7 +308,7 @@ EmpWis As screen:
 
             DataCardValue5 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Dropdown3.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -359,9 +359,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "Preferences")
             Required: =false
             Update: =DataCardValue6.Text
-            Width: =310
-            X: =2
-            Y: =1
+            Width: =417
+            X: =0
+            Y: =5
             ZIndex: =2
 
             DataCardKey6 As label:
@@ -376,7 +376,7 @@ EmpWis As screen:
 
             DataCardValue6 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Dropdown3_8.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -427,9 +427,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "monday")
             Required: =false
             Update: =DataCardValue7.Text
-            Width: =310
+            Width: =417
             X: =0
-            Y: =2
+            Y: =6
             ZIndex: =2
 
             DataCardKey7 As label:
@@ -444,7 +444,7 @@ EmpWis As screen:
 
             DataCardValue7 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Monday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -495,9 +495,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "tuesday")
             Required: =false
             Update: =DataCardValue8.Text
-            Width: =310
-            X: =1
-            Y: =2
+            Width: =417
+            X: =0
+            Y: =7
             ZIndex: =2
 
             DataCardKey8 As label:
@@ -512,7 +512,7 @@ EmpWis As screen:
 
             DataCardValue8 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Tuesday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -563,9 +563,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "Wednesday")
             Required: =false
             Update: =DataCardValue9.Text
-            Width: =310
-            X: =2
-            Y: =2
+            Width: =417
+            X: =0
+            Y: =8
             ZIndex: =2
 
             DataCardKey9 As label:
@@ -580,7 +580,7 @@ EmpWis As screen:
 
             DataCardValue9 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Wednesday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -631,9 +631,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "thursday")
             Required: =false
             Update: =DataCardValue10.Text
-            Width: =310
+            Width: =417
             X: =0
-            Y: =3
+            Y: =9
             ZIndex: =2
 
             DataCardKey10 As label:
@@ -648,7 +648,7 @@ EmpWis As screen:
 
             DataCardValue10 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Sunday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -699,9 +699,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "friday")
             Required: =false
             Update: =DataCardValue11.Text
-            Width: =310
-            X: =1
-            Y: =3
+            Width: =417
+            X: =0
+            Y: =10
             ZIndex: =2
 
             DataCardKey11 As label:
@@ -716,7 +716,7 @@ EmpWis As screen:
 
             DataCardValue11 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Thursday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -767,9 +767,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "saturday")
             Required: =false
             Update: =DataCardValue12.Text
-            Width: =310
-            X: =2
-            Y: =3
+            Width: =417
+            X: =0
+            Y: =11
             ZIndex: =2
 
             DataCardKey12 As label:
@@ -784,7 +784,7 @@ EmpWis As screen:
 
             DataCardValue12 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Saturday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -835,9 +835,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "sunday")
             Required: =false
             Update: =DataCardValue13.Text
-            Width: =310
+            Width: =417
             X: =0
-            Y: =4
+            Y: =12
             ZIndex: =2
 
             DataCardKey13 As label:
@@ -852,7 +852,7 @@ EmpWis As screen:
 
             DataCardValue13 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Friday.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -903,9 +903,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "u03e")
             Required: =false
             Update: =DataCardValue14.Text
-            Width: =310
-            X: =1
-            Y: =4
+            Width: =417
+            X: =0
+            Y: =13
             ZIndex: =2
 
             DataCardKey14 As label:
@@ -920,7 +920,7 @@ EmpWis As screen:
 
             DataCardValue14 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =Week.SelectedText.Value
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -971,9 +971,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "vsiu")
             Required: =false
             Update: =DataCardValue15.Text
-            Width: =310
-            X: =2
-            Y: =4
+            Width: =417
+            X: =0
+            Y: =14
             ZIndex: =2
 
             DataCardKey15 As label:
@@ -1039,9 +1039,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "is1q")
             Required: =false
             Update: =DataCardValue16.Text
-            Width: =310
+            Width: =417
             X: =0
-            Y: =5
+            Y: =15
             ZIndex: =2
 
             DataCardKey16 As label:
@@ -1056,7 +1056,7 @@ EmpWis As screen:
 
             DataCardValue16 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
+                Default: =TextInput2.Text
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
@@ -1107,9 +1107,9 @@ EmpWis As screen:
             MaxLength: =DataSourceInfo([@Employees_wishes], DataSourceInfo.MaxLength, "OData__x0078_kw2")
             Required: =false
             Update: =DataCardValue17.Text
-            Width: =310
-            X: =1
-            Y: =5
+            Width: =417
+            X: =0
+            Y: =16
             ZIndex: =2
 
             DataCardKey17 As label:
@@ -1167,14 +1167,153 @@ EmpWis As screen:
     Button4 As button:
         OnSelect: =NewForm(Form8)
         Text: ="Кнопка"
-        X: =1107
+        X: =494
         Y: =69
         ZIndex: =2
 
     Button10 As button:
         OnSelect: =SubmitForm(Form8)
         Text: ="Кнопка"
-        X: =1107
+        X: =494
         Y: =183
         ZIndex: =3
+
+    TextInput2 As text:
+        Default: ="Текстовое поле"
+        Height: =264
+        X: =436
+        Y: =457
+        ZIndex: =4
+
+    Dropdown3 As dropdown:
+        Default: =Gallery1.Selected.Exceptions
+        Items: =["2\2","2\2 3\2","5\2","4\3"]
+        X: =40
+        Y: =17
+        ZIndex: =5
+
+    Monday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =360
+        ZIndex: =6
+
+    Tuesday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =417
+        ZIndex: =7
+
+    Wednesday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =477
+        ZIndex: =8
+
+    Thursday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =540
+        ZIndex: =9
+
+    Friday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =596
+        ZIndex: =10
+
+    Saturday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =652
+        ZIndex: =11
+
+    Sunday As dropdown:
+        Items: =["","Вых"]
+        X: =40
+        Y: =711
+        ZIndex: =12
+
+    Dropdown3_8 As dropdown:
+        Items: |-
+            =["У (до 18:00)","Д (до 20:00)","В (до 22:00)","Н (до 23:00)","Н (до 00:30)","Н (до 01:00)","Длинная смена"]
+        X: =40
+        Y: =69
+        ZIndex: =13
+
+    Week As dropdown:
+        Items: =["Нет","Да"]
+        X: =432
+        Y: =364
+        ZIndex: =14
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =351
+        Items: =Filter(Employees_wishes,Employee = User().FullName)
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =521
+        X: =844
+        Y: =404
+        ZIndex: =15
+
+        Image3 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image3.Width - 104
+            X: =Image3.X + Image3.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.TL
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Показать сведения об элементе"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
 
