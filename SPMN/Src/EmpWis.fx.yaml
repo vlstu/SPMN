@@ -1415,3 +1415,15 @@ EmpWis As screen:
             Y: =711
             ZIndex: =12
 
+    Button11 As button:
+        Text: ="Кнопка"
+        X: =180
+        Y: =152
+        ZIndex: =17
+
+    Button16 As button:
+        Text: ="Кнопка"
+        X: =400
+        Y: =152
+        ZIndex: =18
+
