@@ -18,7 +18,7 @@
       "cdsdataformatting": false,
       "classiccontrols": false,
       "componentauthoring": true,
-      "copyandmerge": true,
+      "copyandmerge": false,
       "datatablev2control": true,
       "dataverseactionsenabled": false,
       "delaycontrolrendering": false,
