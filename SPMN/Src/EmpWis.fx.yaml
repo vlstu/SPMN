@@ -1317,7 +1317,7 @@ EmpWis As screen:
             ZIndex: =8
 
         Thursday As dropdown:
-            Default: =Gallery1.Selected.thursday
+            Default: =Gallery1.Selected.'sunday (thursday)'
             DisplayMode: =If(Graf.SelectedText.Value <> "5\2", If(Graf.SelectedText.Value <> "4\3", Disabled,Edit),Edit)
             Items: =["","Вых"]
             X: =40
