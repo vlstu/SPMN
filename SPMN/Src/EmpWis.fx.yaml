@@ -2401,3 +2401,9 @@ EmpWis As screen:
         X: =1078
         ZIndex: =28
 
+    Label21 As label:
+        Text: ="Текст"
+        X: =610
+        Y: =301
+        ZIndex: =29
+
