@@ -372,7 +372,7 @@ Screen4 As screen:
 
     Timertim As timer:
         AutoStart: =If(dem1q <> 0,true,false)
-        Duration: =0
+        Duration: =11500
         OnTimerEnd: =
         Visible: =false
         Width: =244
