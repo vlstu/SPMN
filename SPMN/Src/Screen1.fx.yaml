@@ -1253,7 +1253,7 @@ Screen1 As screen:
         Duration: =1
         OnTimerEnd: =Set(vis,0) & Set(vis1,0) & Set(vis2,0) & Set(vis3,0) & Set(vis4,0) & Set(vis5,0) & Set(vis1_1,0)
         Visible: =false
-        X: =1204
+        X: =1043
         Y: =728
         ZIndex: =81
 
