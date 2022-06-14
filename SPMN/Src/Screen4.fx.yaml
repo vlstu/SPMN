@@ -147,19 +147,15 @@ Screen4 As screen:
         HoverBorderColor: =RGBA(0, 0, 0, 1)
         HoverColor: =RGBA(0, 0, 0, 1)
         HoverFill: =RGBA(204, 231, 246, 1)
-        OnSelect: |-
-            =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1)& 
-            SubmitForm(Form2)&
-            SubmitForm(Form3)&
-            SubmitForm(Form4)&
-            SubmitForm(Form5)&
-            SubmitForm(Form6)&
-            SubmitForm(Form7)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1)
         PressedBorderColor: =RGBA(0, 0, 0, 1)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(0, 134, 208, 1)
         Text: ="Подтвердить"
-        Visible: =If(Timertim.Value = Timertim.Duration,true,false)
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "1",true,false)
         X: =833
         Y: =669
         ZIndex: =16
@@ -575,4 +571,124 @@ Screen4 As screen:
         X: =1202
         Y: =728
         ZIndex: =43
+
+    Button7_2 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "2",true,false)
+        X: =833
+        Y: =669
+        ZIndex: =45
+
+    Button7_3 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2) &SubmitForm(Form3)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "3",true,false)
+        X: =833
+        Y: =669
+        ZIndex: =46
+
+    Button7_4 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2) & SubmitForm(Form3) & SubmitForm(Form4)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "4",true,false)
+        X: =833
+        Y: =669
+        ZIndex: =47
+
+    Button7_5 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2) & SubmitForm(Form3) & SubmitForm(Form4)& SubmitForm(Form5)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "5",true,false)
+        X: =833
+        Y: =669
+        ZIndex: =48
+
+    Button7_6 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2) & SubmitForm(Form3) & SubmitForm(Form4)& SubmitForm(Form5)& SubmitForm(Form6)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "6",true,false)
+        X: =831
+        Y: =669
+        ZIndex: =49
+
+    Button7_7 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Height: =59
+        HoverBorderColor: =RGBA(0, 0, 0, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        OnSelect: =Set(dem1q,0) & Navigate(Screen6)  & Set(end1,0)& SubmitForm(Form1) &SubmitForm(Form2) & SubmitForm(Form3) & SubmitForm(Form4)& SubmitForm(Form5)& SubmitForm(Form6)& SubmitForm(Form7)
+        PressedBorderColor: =RGBA(0, 0, 0, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 134, 208, 1)
+        Text: ="Подтвердить"
+        Visible: |-
+            =If(Timertim.Value = Timertim.Duration,true,false)
+            &&
+            If(Dropcov_1.SelectedText.Value = "7",true,false)
+        X: =831
+        Y: =669
+        ZIndex: =50
 
